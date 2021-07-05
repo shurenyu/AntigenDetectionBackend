@@ -8,8 +8,8 @@ const mailConfig = {
     secure: false,
     // requireTLS: true,
     auth: {
-        user: 'info.covidtest4u@gmail.com',
-        pass: 'QdyCz39_U'
+        user: 'antigen.nachweis@gmail.com',
+        pass: 'Start100$'
     }
 };
 
@@ -34,7 +34,7 @@ exports.sendMail = (application, fileName, subject, content) => {
     const user_name = application.firstName + ' ' + application.lastName;
 
     transporter.sendMail({
-        from: 'Covidtest4u <info.covidtest4u@gmail.com>',
+        from: 'Covidtest4u <antigen.nachweis@gmail.com>',
         to: `${user_name} <${to}>`,
         subject: subject,
         text: `Dear ${user_name}!`,
@@ -64,7 +64,7 @@ exports.sendMailAppointmentConfirm = (application, subject, content) => {
     const user_name = application.firstName + ' ' + application.lastName;
 
     transporter.sendMail({
-        from: 'Covidtest4u <info.covidtest4u@gmail.com>',
+        from: 'Covidtest4u <antigen.nachweis@gmail.com>',
         to: `${user_name} <${to}>`,
         subject: subject,
         text: `Dear ${user_name}!`,
