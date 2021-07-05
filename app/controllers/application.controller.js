@@ -282,7 +282,7 @@ exports.completeApplication = async (req, res) => {
             .lineTo(60, 340 + delta)
             .stroke(`${resultColor}`)
 
-        doc.image(`./public/files/${stamp}`, 60, 620 + delta, {width: 120, align: 'right'});
+        doc.image(`./public/files/${stamp}`, 300, 610 + delta, {width: 120, align: 'right'});
 
         doc.end();
 
