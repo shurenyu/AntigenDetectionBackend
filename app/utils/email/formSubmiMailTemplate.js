@@ -92,14 +92,13 @@ module.exports = (info) => {
             <p>Geburtsdatum: ${germanDateFormat(info.birthDay)}</p>
             <p>Testort: ${info.testCenterAddress}</p>
             <p>Datum: ${germanDateFormat(info.bookingDate)}</p>
-            <p>Uhrzeit: ${info.bookingTime}</p>
         </div>
         <div class="paragraph">
             <p>Bitte bringen Sie zum Test ein offizielles Ausweisdokument mit Lichtbild (Personalausweis oder Reisepass) mit.</p>
         </div>
         <div class="paragraph">
             <p>Mit freundlichen Grüßen</p>
-            <p>Ihr Covidtest4u Team</p>
+            <p>Ihr Abraz Dream Team</p>
         </div>
     </div>
 </div>

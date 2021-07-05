@@ -34,7 +34,7 @@ exports.sendMail = (application, fileName, subject, content) => {
     const user_name = application.firstName + ' ' + application.lastName;
 
     transporter.sendMail({
-        from: 'Covidtest4u <antigen.nachweis@gmail.com>',
+        from: 'Antigen-Nachweis <antigen.nachweis@gmail.com>',
         to: `${user_name} <${to}>`,
         subject: subject,
         text: `Dear ${user_name}!`,
@@ -64,7 +64,7 @@ exports.sendMailAppointmentConfirm = (application, subject, content) => {
     const user_name = application.firstName + ' ' + application.lastName;
 
     transporter.sendMail({
-        from: 'Covidtest4u <antigen.nachweis@gmail.com>',
+        from: 'Antigen-Nachweis <antigen.nachweis@gmail.com>',
         to: `${user_name} <${to}>`,
         subject: subject,
         text: `Dear ${user_name}!`,

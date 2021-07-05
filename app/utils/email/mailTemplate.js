@@ -104,7 +104,7 @@ module.exports = (application, adminName) => {
 <body style="font-family: Poppins, sans-serif; background-color: #e8e5ea;">
 <div class="mail-container">
     <div class='mail-header'>
-        <p>Maktub Berlin UG, Blissestraße 48, 10713 Berlin</p>
+        <p>Abraz Dream GmbH, Boxberger Str. 3, D-12681 Berlin</p>
         <p>${germanTimeFormat(application.updatedDate)}</p>
     </div>
     <div class='paragraph'>
@@ -133,6 +133,14 @@ module.exports = (application, adminName) => {
         <p>SARS-CoV-2 Ag Test | oro-/nasopharyngeal(er) Abstrich / swab </p>
     </div>
     <div class='form-line'>
+        <p>Hersteller: </p>
+        <p>Nal von Minden</p>
+    </div>
+    <div class='form-line'>
+        <p>Testname: </p>
+        <p>NADAL COVID-19 AG Test</p>
+    </div>
+    <div class='form-line'>
         <p>Bestellnummer / Order No: </p>
         <p>${application.id}</p>
     </div>
@@ -142,7 +150,7 @@ module.exports = (application, adminName) => {
     </div>
     <div class='form-line'>
         <p>Test durchgeführt durch: </p>
-        <p>${adminName}</p>
+        <p>${adminName || 'Mohmd Alkhalawi'}</p>
     </div>
     
     <div class='paragraph'>
@@ -163,7 +171,7 @@ module.exports = (application, adminName) => {
         <div class='paragraph'>
             <p class='font-bold'>${application.testCenter && application.testCenter.name}</p>
             <p>${application.testCenter && application.testCenter.address}</p>
-            <p>${adminName}</p>
+            <p>${adminName || 'Mohmd Alkhalawi'}</p>
         </div>
     </div>
     
