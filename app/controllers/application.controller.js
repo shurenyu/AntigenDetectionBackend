@@ -29,6 +29,7 @@ exports.registerApplication = async (req, res) => {
             phoneNumber: req.body.phoneNumber,
             gender: req.body.gender,
             birthDay: req.body.birthday,
+            IDNumber: req.body.IDNumber,
             address: req.body.address,
             testCenterId: req.body.testCenterId,
             bookingDate: req.body.bookingDate,
@@ -56,6 +57,7 @@ exports.registerApplication = async (req, res) => {
             phoneNumber: application.phoneNumber,
             gender: application.gender,
             birthDay: application.birthDay,
+            IDNumber: application.IDNumber,
             address: application.address,
             zipcode: application.zipcode,
             street: application.street,
@@ -244,7 +246,7 @@ exports.completeApplication = async (req, res) => {
 
         doc.image('./public/files/berlin-logo.png', 60, 30, {width: 120, align: 'right'});
         const delta0 = 30;
-        const delta = 50;
+        const delta = 70;
         doc
             .fontSize(10)
             .text('Abraz Dream GmbH, Boxberger Str. 3, D-12681 Berlin', 60, 60 + delta0)
@@ -254,6 +256,7 @@ exports.completeApplication = async (req, res) => {
             .text(`Geschlecht / Gender: `, 60, 140 + delta0).text(`${gender}`, 200, 140 + delta0)
             .text(`Geburtsdatum / Date of Birth: `, 60, 160 + delta0).text(`${germanDateFormat(application.birthDay)}`, 200, 160 + delta0)
             .text(`Anschrift: `, 60, 180 + delta0).text(`${application.address}`, 200, 180 + delta0)
+            .text(`Ausweisnummber: `, 60, 200 + delta0).text(`${application.IDNumber}`, 200, 200 + delta0)
             .text(`Testort / Test Location: `, 60, 180 + delta).text(`${application.testCenter && application.testCenter.name} ${application.testCenter && application.testCenter.address}`, 200, 180 + delta)
             .text(`Test-/Probentyp / Test Type: `, 60, 200 + delta).text(`SARS-CoV-2 Ag Test | oro-/nasopharyngeal(er) Abstrich / swab `, 200, 200 + delta)
             .text(`Hersteller: `, 60, 220 + delta).text(`Nal von Minden `, 200, 220 + delta)

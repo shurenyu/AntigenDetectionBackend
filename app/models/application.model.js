@@ -18,6 +18,9 @@ module.exports = (sequelize, Sequelize) => {
         birthDay: {
             type: Sequelize.DATE
         },
+        IDNumber: {
+            type: Sequelize.STRING(30)
+        },
         address: {
             type: Sequelize.STRING(100)
         },
