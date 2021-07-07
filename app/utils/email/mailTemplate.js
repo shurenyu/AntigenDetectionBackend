@@ -125,6 +125,10 @@ module.exports = (application, adminName) => {
         <p>${germanDateFormat(application.birthDay)}</p>
     </div>
     <div class='form-line'>
+        <p>Ausweisnummer / ID Number: </p>
+        <p>${application.IDNumber}</p>
+    </div>
+    <div class='form-line'>
         <p>Testort / Test Location: </p>
         <p>${application.testCenter && application.testCenter.name} ${application.testCenter && application.testCenter.address}</p>
     </div>
