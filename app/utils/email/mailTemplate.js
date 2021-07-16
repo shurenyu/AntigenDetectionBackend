@@ -153,8 +153,8 @@ module.exports = (application, adminName) => {
         <p>${application.id}</p>
     </div>
     <div class='form-line'>
-        <p>Testzeitpunkt / Date of Test: </p>
-        <p>${germanTimeFormat(application.checkinDate)}</p>
+        <p>Testzeitpunkt / Test time: </p>
+        <p>${application.checkinDate ? germanTimeFormat(application.checkinDate) : ''}</p>
     </div>
     <div class='form-line'>
         <p>Test durchgeführt durch: </p>
