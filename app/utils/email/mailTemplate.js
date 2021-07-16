@@ -128,8 +128,8 @@ module.exports = (application, adminName) => {
         <p>Ausweisnummer / ID Number: </p>
         <p>${application.IDNumber}</p>
     </div>
-     <div className='form-line'>
-        <p>Anschrift: </p>
+     <div class='form-line'>
+        <p>Anschrift / Address: </p>
         <p>${application.address}, ${application.zipcode} ${application.street}</p>
     </div>
     <div class='form-line'>
@@ -141,11 +141,11 @@ module.exports = (application, adminName) => {
         <p>SARS-CoV-2 Ag Test | oro-/nasopharyngeal(er) Abstrich / swab </p>
     </div>
     <div class='form-line'>
-        <p>Hersteller: </p>
+        <p>Hersteller / Producer: </p>
         <p>Nal von Minden</p>
     </div>
     <div class='form-line'>
-        <p>Testname: </p>
+        <p>Testname / Test name: </p>
         <p>NADAL COVID-19 AG Test</p>
     </div>
     <div class='form-line'>
@@ -157,7 +157,7 @@ module.exports = (application, adminName) => {
         <p>${application.checkinDate ? germanTimeFormat(application.checkinDate) : ''}</p>
     </div>
     <div class='form-line'>
-        <p>Test durchgeführt durch: </p>
+        <p>Test durchgeführt durch / Test executed by: </p>
         <p>${adminName || 'Mohmd Alkhalawi'}</p>
     </div>
     
