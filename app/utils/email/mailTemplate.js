@@ -128,6 +128,10 @@ module.exports = (application, adminName) => {
         <p>Ausweisnummer / ID Number: </p>
         <p>${application.IDNumber}</p>
     </div>
+     <div className='form-line'>
+        <p>Anschrift: </p>
+        <p>${application.address}, ${application.zipcode} ${application.street}</p>
+    </div>
     <div class='form-line'>
         <p>Testort / Test Location: </p>
         <p>${application.testCenter && application.testCenter.name} ${application.testCenter && application.testCenter.address}</p>

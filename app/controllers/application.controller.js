@@ -255,7 +255,7 @@ exports.completeApplication = async (req, res) => {
             .text(`Name / Name : `, 60, 120 + delta0).text(`${application.firstName} ${application.lastName}`, 200, 120 + delta0)
             .text(`Geschlecht / Gender: `, 60, 140 + delta0).text(`${gender}`, 200, 140 + delta0)
             .text(`Geburtsdatum / Date of Birth: `, 60, 160 + delta0).text(`${germanDateFormat(application.birthDay)}`, 200, 160 + delta0)
-            .text(`Anschrift: `, 60, 180 + delta0).text(`${application.address}`, 200, 180 + delta0)
+            .text(`Anschrift: `, 60, 180 + delta0).text(`${application.address}, ${application.zipcode} ${application.street}`, 200, 180 + delta0)
             .text(`Ausweisnummber: `, 60, 200 + delta0).text(`${application.IDNumber}`, 200, 200 + delta0)
             .text(`Testort / Test Location: `, 60, 180 + delta).text(`${application.testCenter && application.testCenter.name} ${application.testCenter && application.testCenter.address}`, 200, 180 + delta)
             .text(`Test-/Probentyp / Test Type: `, 60, 200 + delta).text(`SARS-CoV-2 Ag Test | oro-/nasopharyngeal(er) Abstrich / swab `, 200, 200 + delta)
