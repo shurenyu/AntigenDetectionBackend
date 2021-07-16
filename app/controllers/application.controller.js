@@ -172,6 +172,9 @@ exports.updateApplication = async (req, res) => {
         }
 
         application.updatedDate = new Date();
+        if (req.body.status && req.body.status === 1) {
+            application.checkinDate = new Date();
+        }
         await application.save();
 
         return res.status(200).json({result: application});
@@ -262,7 +265,7 @@ exports.completeApplication = async (req, res) => {
             .text(`Hersteller: `, 60, 220 + delta).text(`Nal von Minden `, 200, 220 + delta)
             .text(`Testname: `, 60, 240 + delta).text(`NADAL COVID-19 AG Test `, 200, 240 + delta)
             .text(`Bestellnummer / Order No: `, 60, 260 + delta).text(`${application.id}`, 200, 260 + delta)
-            .text(`Testzeitpunkt / Date of Test: `, 60, 280 + delta).text(`${germanDateFormat(application.updatedDate)}`, 200, 280 + delta)
+            .text(`Testzeitpunkt / Date of Test: `, 60, 280 + delta).text(`${germanDateFormat(application.checkinDate)}`, 200, 280 + delta)
             .text(`Test durchgeführt durch: `, 60, 300 + delta).text(`${adminName}`, 200, 300 + delta)
             .text(`Testergebnis / Test Result: `, 60, 320 + delta)
             .fillColor(`${resultColor}`).text(`${result}`, 60, 355 + delta, {align: 'center'})
@@ -292,7 +295,7 @@ exports.completeApplication = async (req, res) => {
         return sendMail(
             application,
             fileName,
-            'Ergebnis Ihres Schnelltests / Your test result',
+            `Ergebnis Ihres Schnelltests / Your test result - Test ID ${application.id}`,
             makeMailFromTemplate(application, adminName)
         );
 
