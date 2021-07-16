@@ -266,7 +266,7 @@ exports.completeApplication = async (req, res) => {
             .text(`Testname / Test name: `, 60, 240 + delta).text(`NADAL COVID-19 AG Test `, 200, 240 + delta)
             .text(`Bestellnummer / Order No: `, 60, 260 + delta).text(`${application.id}`, 200, 260 + delta)
             .text(`Testzeitpunkt / Test time: `, 60, 280 + delta).text(`${application.checkinDate ? germanTimeFormat(application.checkinDate) : ''}`, 200, 280 + delta)
-            .text(`Test durchgeführt durch / Test executed by: `, 60, 300 + delta).text(`${adminName}`, 200, 300 + delta)
+            .text(`Test durchgeführt durch / Test executed by: `, 60, 300 + delta).text(`${adminName}`, 300, 300 + delta)
             .text(`Testergebnis / Test Result: `, 60, 320 + delta)
             .fillColor(`${resultColor}`).text(`${result}`, 60, 355 + delta, {align: 'center'})
             .fillColor('#000000').text(`SARS-CoV-2 Antigen Test (Lateral Flow Method)`, 60, 390 + delta)
