@@ -253,7 +253,7 @@ exports.completeApplication = async (req, res) => {
         doc
             .fontSize(10)
             .text('Abraz Dream GmbH, Boxberger Str. 3, D-12681 Berlin', 60, 60 + delta0)
-            .text(`${germanTimeFormat(application.updatedDate)}`, 60, 60 + delta0, {align: "right"})
+            .text(`${germanDateFormat(application.updatedDate)}`, 60, 60 + delta0, {align: "right"})
             .text(`Bescheinigung über das Vorliegen eines positiven oder negativen Antigentests zum Nachweis des SARS-CoV-2 Virus`, 60, 90 + delta0)
             .text(`Name / Name : `, 60, 120 + delta0).text(`${application.firstName} ${application.lastName}`, 200, 120 + delta0)
             .text(`Geschlecht / Gender: `, 60, 140 + delta0).text(`${gender}`, 200, 140 + delta0)
@@ -266,7 +266,6 @@ exports.completeApplication = async (req, res) => {
             .text(`Testname / Test name: `, 60, 240 + delta).text(`NADAL COVID-19 AG Test `, 200, 240 + delta)
             .text(`Bestellnummer / Order No: `, 60, 260 + delta).text(`${application.id}`, 200, 260 + delta)
             .text(`Testzeitpunkt / Test time: `, 60, 280 + delta).text(`${application.checkinDate ? germanTimeFormat(application.checkinDate) : ''}`, 200, 280 + delta)
-            .text(`Test durchgeführt durch / Test executed by: `, 60, 300 + delta).text(`${adminName}`, 300, 300 + delta)
             .text(`Testergebnis / Test Result: `, 60, 320 + delta)
             .fillColor(`${resultColor}`).text(`${result}`, 60, 355 + delta, {align: 'center'})
             .fillColor('#000000').text(`SARS-CoV-2 Antigen Test (Lateral Flow Method)`, 60, 390 + delta)

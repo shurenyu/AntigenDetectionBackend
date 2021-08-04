@@ -105,7 +105,7 @@ module.exports = (application, adminName) => {
 <div class="mail-container">
     <div class='mail-header'>
         <p>Abraz Dream GmbH, Boxberger Str. 3, D-12681 Berlin</p>
-        <p>${germanTimeFormat(application.updatedDate)}</p>
+        <p>${germanDateFormat(application.updatedDate)}</p>
     </div>
     <div class='paragraph'>
         <p class='font-bold'>
@@ -156,10 +156,6 @@ module.exports = (application, adminName) => {
         <p>Testzeitpunkt / Test time: </p>
         <p>${application.checkinDate ? germanTimeFormat(application.checkinDate) : ''}</p>
     </div>
-    <div class='form-line'>
-        <p>Test durchgeführt durch / Test executed by: </p>
-        <p>${adminName || 'Mohmd Alkhalawi'}</p>
-    </div>
     
     <div class='paragraph'>
         <p>Testergebnis / Test Result:</p>
@@ -181,6 +177,9 @@ module.exports = (application, adminName) => {
             <p>${application.testCenter && application.testCenter.address}</p>
             <p>${adminName || 'Mohmd Alkhalawi'}</p>
         </div>
+    </div>
+    <div>
+        <img src="" alt="">
     </div>
     
 </div>
