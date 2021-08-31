@@ -58,6 +58,7 @@ require('./app/routes/testCenter.routes')(app);
 require('./app/routes/application.routes')(app);
 require('./app/routes/member.routes')(app);
 require('./app/routes/timeSlot.routes')(app);
+require('./app/routes/confirmation.routes')(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 5000;
