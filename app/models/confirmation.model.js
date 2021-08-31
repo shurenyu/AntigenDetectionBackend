@@ -6,6 +6,9 @@ module.exports = (sequelize, Sequelize) => {
         testDate: {
             type: Sequelize.DATE,
         },
+        testCenterId: {
+            type: Sequelize.INTEGER(255),
+        },
         tickbox1: {
             type: Sequelize.INTEGER(4),
             defaultValue: 0,

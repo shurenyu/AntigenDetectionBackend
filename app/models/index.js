@@ -38,10 +38,15 @@ db.admin.belongsTo(db.testCenter);
 db.testCenter.hasMany(db.application);
 db.application.belongsTo(db.testCenter);
 
+db.testCenter.hasMany(db.confirmation);
+db.confirmation.belongsTo(db.testCenter);
+
 db.testCenter.hasMany(db.dateSlot);
 db.dateSlot.belongsTo(db.testCenter);
 db.dateSlot.hasMany(db.timeSlot);
 db.timeSlot.belongsTo(db.dateSlot);
+
+
 
 // db.application.hasOne(db.timeSlot, {sourceKey: 'timeSlotId', foreignKey: 'id'});
 

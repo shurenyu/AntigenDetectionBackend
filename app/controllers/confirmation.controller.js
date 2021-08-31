@@ -1,5 +1,6 @@
 const db = require("../models");
 const Confirmation = db.confirmation;
+const TestCenter = db.testCenter;
 const {DEFAULT_LIMIT} = require("../config");
 const Op = db.Sequelize.Op;
 
@@ -8,6 +9,7 @@ exports.submitConfirmation = (req, res) => {
     Confirmation.create({
         bookingID: req.body.bookingID,
         testDate: req.body.testDate,
+        testCenterId: req.body.testCenterId || 0,
         tickbox1: req.body.tickbox1,
         tickbox2: req.body.tickbox2,
         tickbox3: req.body.tickbox3,
@@ -31,7 +33,10 @@ exports.getConfirmationByFilter = async (req, res) => {
         const confirmations = await Confirmation.findAndCountAll({
             limit: req.body.limit || 1000000,
             offset: req.body.offset || 0,
-            where: filter
+            where: filter,
+            include: [{
+                model: TestCenter,
+            }]
         });
 
         return res.status(200).json({result: confirmations});
